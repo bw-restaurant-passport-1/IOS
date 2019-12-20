@@ -108,9 +108,9 @@
 		BAA3A20F23A9E40900C06F52 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BAA3A22023A9E65C00C06F52 /* Restaurant.xcdatamodeld */,
 				BAA3A21C23A9E62D00C06F52 /* RestaurantRepresentation.swift */,
 				BAA3A21E23A9E64300C06F52 /* Restaurant+Convenience.swift */,
-				BAA3A22023A9E65C00C06F52 /* Restaurant.xcdatamodeld */,
 				BAA3A22323A9E66E00C06F52 /* User.swift */,
 			);
 			name = Models;

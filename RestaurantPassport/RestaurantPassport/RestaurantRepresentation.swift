@@ -9,15 +9,15 @@
 import Foundation
 
 struct RestaurantRepresentation: Equatable, Codable {
-    let restaurantName: String = "New Restaurant"
+    let restaurantName: String? = "New Restaurant"
     let streetAddress: String?
     let city: String?
     let zipcode: String?
     let phoneNumber: String?
     let websiteURL: String?
-    let myRating: Int = 3
+    let myRating: Int? = 3
     let notes: String?
-    let stamped: Bool = false
+    let stamped: Bool? = false
 }
 
 
