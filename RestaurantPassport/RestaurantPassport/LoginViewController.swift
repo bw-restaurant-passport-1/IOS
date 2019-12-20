@@ -9,11 +9,25 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+// MARK: - Outlets
+    @IBOutlet weak var loginSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var fullNameTextField: UITextField!
+    @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    // MARK: - Methods
+    // View
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    // Actions
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
     }
     
 
