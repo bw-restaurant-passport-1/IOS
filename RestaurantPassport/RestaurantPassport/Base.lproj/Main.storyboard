@@ -160,32 +160,50 @@
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sr9-HF-4j2">
                                                             <rect key="frame" x="0.0" y="0.0" width="22" height="41.5"/>
                                                             <state key="normal" image="star" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="star1Selected:" destination="1nG-ry-DFg" eventType="touchUpInside" id="vhL-cL-6VW"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D4Z-Tf-FAS">
                                                             <rect key="frame" x="22" y="0.0" width="22" height="41"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="star" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="star2Selected:" destination="1nG-ry-DFg" eventType="touchUpInside" id="jgO-ii-dWy"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vQF-aA-DiY">
                                                             <rect key="frame" x="44" y="0.0" width="22" height="41"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="star" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="star3Selected:" destination="1nG-ry-DFg" eventType="touchUpInside" id="NPE-6u-3eI"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PFE-Od-hMT">
                                                             <rect key="frame" x="66" y="0.0" width="22" height="41"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="star" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="star4Selected:" destination="1nG-ry-DFg" eventType="touchUpInside" id="w1s-IM-ewy"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lXa-hA-I5B">
                                                             <rect key="frame" x="88" y="0.0" width="22" height="41"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="star" catalog="system"/>
+                                                            <connections>
+                                                                <action selector="star5Selected:" destination="1nG-ry-DFg" eventType="touchUpInside" id="iLZ-fb-6DM"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgh-Dp-0cf">
                                                     <rect key="frame" x="332" y="0.0" width="62" height="41.5"/>
                                                     <state key="normal" title="Stamped"/>
+                                                    <connections>
+                                                        <action selector="stampSelected:" destination="1nG-ry-DFg" eventType="touchUpInside" id="pWn-IB-NEm"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -198,6 +216,13 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="nameLabel" destination="p4N-QN-Aad" id="VDE-aS-RPw"/>
+                                    <outlet property="stampButton" destination="Sgh-Dp-0cf" id="CbH-iA-YFL"/>
+                                    <outlet property="star1Button" destination="Sr9-HF-4j2" id="hgs-yg-big"/>
+                                    <outlet property="star2Button" destination="D4Z-Tf-FAS" id="iv6-Xr-IML"/>
+                                    <outlet property="star3Button" destination="vQF-aA-DiY" id="Qo3-5w-YDB"/>
+                                    <outlet property="star4Button" destination="PFE-Od-hMT" id="IHR-8k-fOn"/>
+                                    <outlet property="star5Button" destination="lXa-hA-I5B" id="Wjr-xk-iMC"/>
                                     <segue destination="pS9-QJ-G0t" kind="show" identifier="viewSegue" id="ktL-09-N00"/>
                                 </connections>
                             </tableViewCell>
