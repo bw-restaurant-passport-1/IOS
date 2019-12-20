@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="Restaurant" representedClassName="Restaurant" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String" defaultValueString="&quot;City&quot;"/>
+        <attribute name="myRating" attributeType="Integer 16" minValueString="1" maxValueString="5" defaultValueString="3" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" defaultValueString="&quot;Restaurant Notes&quot;"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" minValueString="10" maxValueString="14" defaultValueString="&quot;(123) 456-7890&quot;"/>
+        <attribute name="restaurantName" attributeType="String" defaultValueString="&quot; New Restaurant&quot;"/>
+        <attribute name="stamped" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="streetAddress" optional="YES" attributeType="String" defaultValueString="&quot;123 Main St.&quot;"/>
+        <attribute name="websiteURL" optional="YES" attributeType="String" defaultValueString="&quot;www.myrestaurant.com&quot;"/>
+        <attribute name="zipcode" optional="YES" attributeType="String" minValueString="5" maxValueString="10" defaultValueString="&quot;12345-1234&quot;"/>
+    </entity>
+    <elements>
+        <element name="Restaurant" positionX="-63" positionY="-18" width="128" height="178"/>
+    </elements>
 </model>
