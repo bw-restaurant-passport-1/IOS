@@ -15,7 +15,7 @@ struct RestaurantRepresentation: Equatable, Codable {
     let zipcode: String?
     let phoneNumber: String?
     let websiteURL: String?
-    let myRating: Int? = 3
+    let myRating: Int16? = 3
     let notes: String?
     let stamped: Bool? = false
 }
