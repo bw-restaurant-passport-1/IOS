@@ -277,26 +277,41 @@
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjs-Na-tPP">
                                                         <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                                         <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="star1Selected:" destination="pS9-QJ-G0t" eventType="touchUpInside" id="eGY-cX-kHw"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="acR-Ra-1Ab">
                                                         <rect key="frame" x="22" y="0.0" width="22" height="22"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="star2Selected:" destination="pS9-QJ-G0t" eventType="touchUpInside" id="Ej5-Zm-lAX"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="wot-Ex-dfk">
                                                         <rect key="frame" x="44" y="0.0" width="22" height="22"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="star3Selected:" destination="pS9-QJ-G0t" eventType="touchUpInside" id="YMW-i5-GaA"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Jmr-PV-e1f">
                                                         <rect key="frame" x="66" y="0.0" width="22" height="22"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="star4Selected:" destination="pS9-QJ-G0t" eventType="touchUpInside" id="68K-lT-4xa"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4NM-A8-DjL">
                                                         <rect key="frame" x="88" y="0.0" width="22" height="22"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <state key="normal" image="star" catalog="system"/>
+                                                        <connections>
+                                                            <action selector="star5Selected:" destination="pS9-QJ-G0t" eventType="touchUpInside" id="7y1-v2-C9B"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -386,8 +401,25 @@
                         <viewLayoutGuide key="safeArea" id="oaM-7i-3vf"/>
                     </view>
                     <navigationItem key="navigationItem" title="Name" id="HAb-P4-Q66">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VBA-w0-Luf"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="VBA-w0-Luf">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="pS9-QJ-G0t" id="leG-Md-i7y"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressTextField" destination="G51-ov-NPr" id="Sj0-rg-86Z"/>
+                        <outlet property="imageView" destination="bIF-TO-Veg" id="Gd3-6u-CNQ"/>
+                        <outlet property="notesTextView" destination="Qi6-fD-EpP" id="Psj-JA-13Z"/>
+                        <outlet property="phoneTextField" destination="5ff-8F-GHz" id="PTP-W3-qKx"/>
+                        <outlet property="saveButton" destination="VBA-w0-Luf" id="2Rx-Sm-fJ3"/>
+                        <outlet property="star1Button" destination="jjs-Na-tPP" id="ZbR-wu-cS4"/>
+                        <outlet property="star2Button" destination="acR-Ra-1Ab" id="Zhj-Ap-GjZ"/>
+                        <outlet property="star3Button" destination="wot-Ex-dfk" id="rxT-mj-gUv"/>
+                        <outlet property="star4Button" destination="Jmr-PV-e1f" id="LSb-d8-pgw"/>
+                        <outlet property="star5Button" destination="4NM-A8-DjL" id="l3c-Gv-eoC"/>
+                        <outlet property="websiteTextField" destination="yap-Of-mNd" id="hWn-ur-wUv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tlv-mn-rWt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
