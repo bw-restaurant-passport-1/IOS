@@ -14,14 +14,18 @@ extension Restaurant {
     // MARK: - Properties
     var restaurantRepresentation: RestaurantRepresentation? {
         
-        guard let restaurantName = restaurantName,
-        let stamped = stamped,
-            let myRating = myRating else { return nil }
-        return RestaurantRepresentation(restaurantName: restaurantName, streetAddress: streetAddress, city: city, zipcode: zipcode, phoneNumber: phoneNumber, websiteURL: websiteURL, myRating: myRating, notes: notes, stamped: stamped)
+        guard restaurantName != nil else { return nil }
+        let streetAddress = self.streetAddress ?? "123 Main St."
+        let city = self.city ?? "My City"
+        let zipcode = self.zipcode ?? "12345-1234"
+        let phoneNumber = self.phoneNumber ?? "(123) 456-7890"
+        let websiteURL = self.websiteURL ?? "www.website.com"
+        let notes = self.notes ?? "Notes about Restaurant"
+        return RestaurantRepresentation(streetAddress: streetAddress, city: city, zipcode: zipcode, phoneNumber: phoneNumber, websiteURL: websiteURL, notes: notes)
     }
     
     // MARK: - Initializers
-    @discardableResult convenience init? (restaurantName: restaurantName, streetAddress: streetAddress, city: city, zipcode: zipcode, phoneNumber: phoneNumber, websiteURL: websiteURL, myRating: myRating, notes: notes, stamped: stamped, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    @discardableResult convenience init?(restaurantName: String, myRating: Int16, stamped: Bool, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         self.init(context: context)
         
@@ -40,8 +44,8 @@ extension Restaurant {
         
         guard let restaurantName = representation.restaurantName,
             let stamped = representation.stamped,
-            let myRating = representation.myRating else {return nil}
+            let myRating = representation.myRating else { return nil }
         
-        self.init((restaurantName: restaurantName, streetAddress: streetAddress, city: city, zipcode: zipcode, phoneNumber: phoneNumber, websiteURL: websiteURL, myRating: myRating, notes: notes, stamped: stamped, context: context))
+        self.init(restaurantName: restaurantName, myRating: myRating, stamped: stamped, context: context)
     }
 }
