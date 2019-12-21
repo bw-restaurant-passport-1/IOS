@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct User: Codable {
+    let username: String
+    let password: String
+    let name: String
+    var email: String
+    var city: String
+    
+}
