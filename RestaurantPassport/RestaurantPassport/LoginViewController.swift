@@ -31,7 +31,6 @@ class LoginViewController: UIViewController {
     // View
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     // Actions
