@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct User: Codable,Equatable {
+    var username: String
+    var strongPassword:String
+    var name: String
+    var email: String
+    
+}
+
+
