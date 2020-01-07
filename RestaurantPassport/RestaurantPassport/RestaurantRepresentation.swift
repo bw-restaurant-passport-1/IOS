@@ -18,6 +18,7 @@ struct RestaurantRepresentation: Equatable, Codable {
     let myRating: Int16? = 3
     let notes: String?
     let stamped: Bool? = false
+    let id: UUID?
 }
 
 

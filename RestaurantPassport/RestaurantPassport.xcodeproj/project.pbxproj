@@ -44,6 +44,7 @@
 		BAA3A22523A9E68800C06F52 /* RestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantController.swift; sourceTree = "<group>"; };
 		BAA3A22723A9E69600C06F52 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		BAA3A22923A9E6AC00C06F52 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		BAEE907223C42C820090EE8C /* Restaurant 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Restaurant 2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,9 +440,10 @@
 		BAA3A22023A9E65C00C06F52 /* Restaurant.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				BAEE907223C42C820090EE8C /* Restaurant 2.xcdatamodel */,
 				BAA3A22123A9E65C00C06F52 /* Restaurant.xcdatamodel */,
 			);
-			currentVersion = BAA3A22123A9E65C00C06F52 /* Restaurant.xcdatamodel */;
+			currentVersion = BAEE907223C42C820090EE8C /* Restaurant 2.xcdatamodel */;
 			path = Restaurant.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
