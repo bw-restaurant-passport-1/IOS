@@ -23,6 +23,9 @@
 		BAA3A22623A9E68800C06F52 /* RestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3A22523A9E68800C06F52 /* RestaurantController.swift */; };
 		BAA3A22823A9E69600C06F52 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3A22723A9E69600C06F52 /* UserController.swift */; };
 		BAA3A22A23A9E6AC00C06F52 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA3A22923A9E6AC00C06F52 /* CoreDataStack.swift */; };
+		BAEE907423C439070090EE8C /* Review+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE907323C439070090EE8C /* Review+Convenience.swift */; };
+		BAEE907623C4394E0090EE8C /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE907523C4394E0090EE8C /* ReviewController.swift */; };
+		BAEE907823C439C60090EE8C /* ReviewRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE907723C439C60090EE8C /* ReviewRepresentation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		BAA3A22723A9E69600C06F52 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		BAA3A22923A9E6AC00C06F52 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		BAEE907223C42C820090EE8C /* Restaurant 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Restaurant 2.xcdatamodel"; sourceTree = "<group>"; };
+		BAEE907323C439070090EE8C /* Review+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Review+Convenience.swift"; sourceTree = "<group>"; };
+		BAEE907523C4394E0090EE8C /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
+		BAEE907723C439C60090EE8C /* ReviewRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRepresentation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +117,9 @@
 			children = (
 				BAA3A22023A9E65C00C06F52 /* Restaurant.xcdatamodeld */,
 				BAA3A21C23A9E62D00C06F52 /* RestaurantRepresentation.swift */,
+				BAEE907723C439C60090EE8C /* ReviewRepresentation.swift */,
 				BAA3A21E23A9E64300C06F52 /* Restaurant+Convenience.swift */,
+				BAEE907323C439070090EE8C /* Review+Convenience.swift */,
 				BAA3A22323A9E66E00C06F52 /* User.swift */,
 			);
 			name = Models;
@@ -121,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				BAA3A22523A9E68800C06F52 /* RestaurantController.swift */,
+				BAEE907523C4394E0090EE8C /* ReviewController.swift */,
 				BAA3A22723A9E69600C06F52 /* UserController.swift */,
 			);
 			name = "Model Controllers";
@@ -230,8 +239,11 @@
 				BAA3A22223A9E65C00C06F52 /* Restaurant.xcdatamodeld in Sources */,
 				BAA3A1FB23A9E37700C06F52 /* SceneDelegate.swift in Sources */,
 				BAA3A21D23A9E62D00C06F52 /* RestaurantRepresentation.swift in Sources */,
+				BAEE907623C4394E0090EE8C /* ReviewController.swift in Sources */,
+				BAEE907823C439C60090EE8C /* ReviewRepresentation.swift in Sources */,
 				BAA3A21723A9E5BD00C06F52 /* RestaurantDetailViewController.swift in Sources */,
 				BAA3A22A23A9E6AC00C06F52 /* CoreDataStack.swift in Sources */,
+				BAEE907423C439070090EE8C /* Review+Convenience.swift in Sources */,
 				BAA3A22823A9E69600C06F52 /* UserController.swift in Sources */,
 				BAA3A21923A9E5DC00C06F52 /* LoginViewController.swift in Sources */,
 				BAA3A21B23A9E60B00C06F52 /* RestaurantTableViewCell.swift in Sources */,

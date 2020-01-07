@@ -18,13 +18,8 @@ enum HTTPMethod: String {
 
 class RestaurantController {
     // MARK: - Properties
-    // API
-    // TODO: Reconfigure once API is set up
-    private let apiKey = "4cc920dab8b729a619647ccc4d191d5e"
-    private let baseURL = URL(string: "https://restaurant-passport1.herokuapp.com/api")!
-    
     // Database
-    private let base = URL(string: "https://restaurant-passport.firebaseio.com")!
+    private let base = URL(string: "https://restaurant-passport1.herokuapp.com/api/restaurants")!
     
     // Restaurant Array
     var searchedRestaurants: [RestaurantRepresentation] = []
@@ -132,7 +127,6 @@ class RestaurantController {
                     
                     restaurant.restaurantName = representation.restaurantName
                     restaurant.id = representation.id
-                    restaurant.stamped = representation.stamped!
                     restaurantsToCreate.removeValue(forKey: identifier.uuidString)
                 }
                 
@@ -179,20 +173,6 @@ class RestaurantController {
         
         put(restaurant: restaurant!)
         
-    }
-    
-    func visitRestaurant(restaurant: Restaurant, stamped: Bool) {
-        
-        restaurant.stamped = stamped
-        CoreDataStack.shared.save()
-        put(restaurant: restaurant)
-    }
-    
-    func rateRestaurant(restaurant: Restaurant, myRating: Int16) {
-        
-        restaurant.myRating = myRating
-        CoreDataStack.shared.save()
-        put(restaurant: restaurant)
     }
     
     func delete(restaurant: Restaurant){
