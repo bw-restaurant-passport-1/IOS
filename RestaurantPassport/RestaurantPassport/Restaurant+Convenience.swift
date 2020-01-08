@@ -20,12 +20,13 @@ extension Restaurant {
         let zipcode = self.zipcode ?? "12345-1234"
         let phoneNumber = self.phoneNumber ?? "(123) 456-7890"
         let websiteURL = self.websiteURL ?? "www.website.com"
-        let notes = self.notes ?? "Notes about Restaurant"
-        return RestaurantRepresentation(streetAddress: streetAddress, city: city, zipcode: zipcode, phoneNumber: phoneNumber, websiteURL: websiteURL, notes: notes)
+        let id = self.id ?? UUID()
+        let restaurantPictureURL = self.restaurantPictureURL
+        return RestaurantRepresentation(id: id, streetAddress: streetAddress, city: city, zipcode: zipcode, phoneNumber: phoneNumber, websiteURL: websiteURL, restaurantPictureURL: restaurantPictureURL)
     }
     
     // MARK: - Initializers
-    @discardableResult convenience init?(restaurantName: String, myRating: Int16, stamped: Bool, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    @discardableResult convenience init?(id: UUID, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         self.init(context: context)
         
@@ -35,17 +36,27 @@ extension Restaurant {
         self.zipcode = zipcode
         self.phoneNumber = phoneNumber
         self.websiteURL = websiteURL
-        self.myRating = myRating
-        self.notes = notes
-        self.stamped = stamped
+        self.restaurantPictureURL = restaurantPictureURL
+        self.id = id
     }
     
     @discardableResult convenience init?(_ representation: RestaurantRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
-        guard let restaurantName = representation.restaurantName,
-            let stamped = representation.stamped,
-            let myRating = representation.myRating else { return nil }
+        guard let restaurantName = representation.restaurantName, let id = representation.id else { return nil }
         
-        self.init(restaurantName: restaurantName, myRating: myRating, stamped: stamped, context: context)
+        self.init(representation, context: context)
+    }
+    
+    @discardableResult convenience init?(id: UUID, restaurantName: String?, streetAddress: String?, city: String?, zipcode: String?, phoneNumber: String?, websiteURL: String?, restaurantPictureURL: String?) {
+        
+        self.init()
+        self.id = id
+        self.restaurantName = restaurantName
+        self.streetAddress = streetAddress
+        self.city = city
+        self.zipcode = zipcode
+        self.phoneNumber = phoneNumber
+        self.websiteURL = websiteURL
+        self.restaurantPictureURL = restaurantPictureURL
     }
 }
