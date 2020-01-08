@@ -26,6 +26,10 @@
 		BAEE907423C439070090EE8C /* Review+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE907323C439070090EE8C /* Review+Convenience.swift */; };
 		BAEE907623C4394E0090EE8C /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE907523C4394E0090EE8C /* ReviewController.swift */; };
 		BAEE907823C439C60090EE8C /* ReviewRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE907723C439C60090EE8C /* ReviewRepresentation.swift */; };
+		BAEE907B23C5863E0090EE8C /* Raleway regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAEE907A23C5863E0090EE8C /* Raleway regular.ttf */; };
+		BAEE907D23C586760090EE8C /* Lato regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAEE907C23C586760090EE8C /* Lato regular.ttf */; };
+		BAEE907F23C5868F0090EE8C /* Girassol-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAEE907E23C5868F0090EE8C /* Girassol-Regular.ttf */; };
+		BAEE908123C5869F0090EE8C /* Special Elite regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAEE908023C5869F0090EE8C /* Special Elite regular.ttf */; };
 		F3C0A65123ADF8EB006521C2 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0A65023ADF8EB006521C2 /* Token.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +56,10 @@
 		BAEE907323C439070090EE8C /* Review+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Review+Convenience.swift"; sourceTree = "<group>"; };
 		BAEE907523C4394E0090EE8C /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
 		BAEE907723C439C60090EE8C /* ReviewRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRepresentation.swift; sourceTree = "<group>"; };
+		BAEE907A23C5863E0090EE8C /* Raleway regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Raleway regular.ttf"; path = "Assets.xcassets/Raleway regular.dataset/Raleway regular.ttf"; sourceTree = "<group>"; };
+		BAEE907C23C586760090EE8C /* Lato regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato regular.ttf"; path = "Assets.xcassets/Lato regular.dataset/Lato regular.ttf"; sourceTree = "<group>"; };
+		BAEE907E23C5868F0090EE8C /* Girassol-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Girassol-Regular.ttf"; path = "Assets.xcassets/Girassol-Regular.dataset/Girassol-Regular.ttf"; sourceTree = "<group>"; };
+		BAEE908023C5869F0090EE8C /* Special Elite regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Special Elite regular.ttf"; path = "Assets.xcassets/Special Elite regular.dataset/Special Elite regular.ttf"; sourceTree = "<group>"; };
 		F3C0A65023ADF8EB006521C2 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +99,7 @@
 				BAA3A21023A9E42000C06F52 /* Model Controllers */,
 				BAA3A21123A9E42900C06F52 /* Core Data */,
 				BAA3A21223A9E4B900C06F52 /* Resources */,
+				BAEE907923C585910090EE8C /* Fonts */,
 				BAA3A21323A9E4EA00C06F52 /* Storyboards */,
 			);
 			path = RestaurantPassport;
@@ -166,6 +175,17 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		BAEE907923C585910090EE8C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BAEE908023C5869F0090EE8C /* Special Elite regular.ttf */,
+				BAEE907E23C5868F0090EE8C /* Girassol-Regular.ttf */,
+				BAEE907C23C586760090EE8C /* Lato regular.ttf */,
+				BAEE907A23C5863E0090EE8C /* Raleway regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -225,8 +245,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAA3A20523A9E37900C06F52 /* LaunchScreen.storyboard in Resources */,
+				BAEE907D23C586760090EE8C /* Lato regular.ttf in Resources */,
 				BAA3A20223A9E37900C06F52 /* Assets.xcassets in Resources */,
+				BAEE907B23C5863E0090EE8C /* Raleway regular.ttf in Resources */,
+				BAEE908123C5869F0090EE8C /* Special Elite regular.ttf in Resources */,
 				BAA3A20023A9E37700C06F52 /* Main.storyboard in Resources */,
+				BAEE907F23C5868F0090EE8C /* Girassol-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
