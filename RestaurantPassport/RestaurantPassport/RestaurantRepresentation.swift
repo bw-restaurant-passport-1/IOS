@@ -9,13 +9,14 @@
 import Foundation
 
 struct RestaurantRepresentation: Equatable, Codable {
+    let id: UUID?
     let restaurantName: String? = "New Restaurant"
     let streetAddress: String?
     let city: String?
     let zipcode: String?
     let phoneNumber: String?
     let websiteURL: String?
-    let id: UUID?
+    let restaurantPictureURL: String?
 }
 
 

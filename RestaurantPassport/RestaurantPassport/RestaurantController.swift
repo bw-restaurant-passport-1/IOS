@@ -161,11 +161,9 @@ class RestaurantController {
         }.resume()
     }
     
-    func createRestaurant(with restaurantName: String, myrating: Int16, stamped: Bool) {
-        
-        let restaurant = Restaurant(restaurantName: restaurantName,
-                                    myRating: myrating,
-                                    stamped: stamped)
+    func createRestaurant(with restaurantName: String?, streetAddress: String?, city: String?, zipcode: String?, phoneNumber: String?, websiteURL: String?, restaurantPictureURL: String?) {
+        let id = UUID()
+        let restaurant = Restaurant(id: id, restaurantName: restaurantName, streetAddress: streetAddress, city: city, zipcode: zipcode, phoneNumber: phoneNumber, websiteURL: websiteURL, restaurantPictureURL: restaurantPictureURL)
         
         let context = CoreDataStack.shared.backgroundContext
         

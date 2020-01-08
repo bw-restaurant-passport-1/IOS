@@ -63,7 +63,7 @@ class ReviewController {
     
     func updateReview(with representations: [ReviewRepresentation]) {
         
-        let identifiersToFetch = representations.compactMap({ $0.user_id})
+        let identifiersToFetch = representations.compactMap({ $0.id})
         let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
         let context = CoreDataStack.shared.backgroundContext
         
@@ -77,7 +77,7 @@ class ReviewController {
                 let existingReviews = try context.fetch(fetchRequest)
                 
                 for review in existingReviews {
-                    guard let identifier = review.user_id,
+                    guard let identifier = review.id,
                         let representation = representationsByID[identifier] else { continue }
                     
                     review.id = representation.id
@@ -120,9 +120,11 @@ class ReviewController {
         }.resume()
     }
     
-    func createReview(with id: String, restaurant_id: String, myrating: String, notes: String, stamped: Bool) {
+    func createReview(with id: String, restaurant_id: String, myrating: String?, notes: String?, stamped: Bool?) {
         
-        let review = Review(id: id, restaurant_id: restaurant_id,
+        // TOFIX: - User ID
+        let user_id = ""
+        let review = Review(id: id, user_id: user_id, restaurant_id: restaurant_id,
                                     myRating: myrating,
                                     notes: notes,
                                     stamped: stamped)
@@ -131,7 +133,7 @@ class ReviewController {
         
         CoreDataStack.shared.save(context: context)
         
-        put(review: review)
+        put(review: review!)
         
     }
     

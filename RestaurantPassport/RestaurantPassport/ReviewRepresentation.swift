@@ -13,7 +13,7 @@ struct ReviewRepresentation: Equatable, Codable {
     let user_id: String
     var restaurant_id: String
     var myRating: String? = "3"
-    var notes: String?
+    var notes: String? = ""
     var stamped: Bool? = false
 }
 

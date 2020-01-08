@@ -15,9 +15,11 @@ extension Review {
     var reviewRepresentation: ReviewRepresentation? {
         
         guard user_id != nil, id != nil else { return nil }
+        let myRating = self.myRating
+        let stamped = self.stamped
         let notes = self.notes ?? "Notes about Restaurant"
         let restaurant_id = self.restaurant_id ?? UUID().uuidString
-        return ReviewRepresentation(id: id!, user_id: user_id!, restaurant_id: restaurant_id, notes: notes)
+        return ReviewRepresentation(id: id!, user_id: user_id!, restaurant_id: restaurant_id, myRating: myRating, notes: notes, stamped: stamped)
     }
     
     // MARK: - Initializers
@@ -38,6 +40,22 @@ extension Review {
         guard let stamped = representation.stamped,
             let myRating = representation.myRating else { return nil }
         
-        self.init(id: id!, user_id: user_id!, restaurant_id: restaurant_id!, myRating: myRating, stamped: stamped, context: context)
+        self.init(representation, context: context)
+    }
+    
+    @discardableResult convenience init?(id: String,
+                                         user_id: String,
+                                         restaurant_id: String,
+                                         myRating: String?,
+                                         notes: String?,
+                                         stamped: Bool?) {
+        self.init()
+        
+        self.id = id
+        self.user_id = user_id
+        self.restaurant_id = restaurant_id
+        self.myRating = myRating
+        self.notes = notes
+        self.stamped = stamped ?? false
     }
 }
