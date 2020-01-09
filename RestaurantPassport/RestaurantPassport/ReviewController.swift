@@ -120,10 +120,11 @@ class ReviewController {
         }.resume()
     }
     
-    func createReview(with id: String, restaurant_id: String, myrating: String?, notes: String?, stamped: Bool?) {
+    func createReview(restaurant_id: String, myrating: String?, notes: String?, stamped: Bool?) {
         
-        // TOFIX: - User ID
-        let user_id = ""
+        // TODO: - User ID
+        let id = UUID().uuidString
+        let user_id = "" // should be user.id
         let review = Review(id: id, user_id: user_id, restaurant_id: restaurant_id,
                                     myRating: myrating,
                                     notes: notes,
