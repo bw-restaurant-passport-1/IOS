@@ -47,6 +47,7 @@ class RestaurantDetailViewController: UIViewController {
             saveButton.title = "Save"
             return
         }
+        
         self.title = restaurant.restaurantName
         //TODO: Figure out how to display image from URL
         //imageView. restaurant.restaurantPictureURL
