@@ -9,6 +9,6 @@
 import Foundation
 
 struct TokenResponse: Codable {
-    let user: User
+    let id: Int
     let token: String
 }
