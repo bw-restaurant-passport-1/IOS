@@ -28,7 +28,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     
     // MARK: Properties
-    var userController: UserController = UserController()
+    var userController: UserController?
     var loginType = LoginType.signUp
     var user: User?
     
@@ -40,7 +40,7 @@ class LoginViewController: UIViewController {
     
     // Actions
     @IBAction func loginButtonTapped(_ sender: UIButton) {
-        
+        guard let userController = userController else { return }
         if let username = usernameTextField.text,
             !username.isEmpty,
             let password = passwordTextField.text,
