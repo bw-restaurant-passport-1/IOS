@@ -26,9 +26,12 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="D8R-tJ-FAb">
                                 <rect key="frame" x="139.5" y="20" width="135" height="32"/>
                                 <segments>
-                                    <segment title="Log In"/>
                                     <segment title="Sign Up"/>
+                                    <segment title="Log In"/>
                                 </segments>
+                                <connections>
+                                    <action selector="loginTypeChanged:" destination="ibd-4q-B8b" eventType="valueChanged" id="Mdp-fj-1xa"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qby-Y5-URj">
                                 <rect key="frame" x="181" y="457.5" width="52" height="34"/>
@@ -137,11 +140,14 @@
                         <viewLayoutGuide key="safeArea" id="uap-ho-5L2"/>
                     </view>
                     <connections>
+                        <outlet property="cityLabel" destination="7GJ-IV-cUK" id="wrA-HP-1wo"/>
                         <outlet property="cityTextField" destination="O6G-gi-d1e" id="em9-5v-Tko"/>
+                        <outlet property="emailLabel" destination="OIj-nm-hpT" id="H4r-nv-2Ai"/>
                         <outlet property="emailTextField" destination="Sy9-hw-jGU" id="CAR-rj-vil"/>
                         <outlet property="fullNameTextField" destination="gEy-r2-kxT" id="qKf-BZ-Pn7"/>
                         <outlet property="loginButton" destination="qby-Y5-URj" id="ODx-tX-3Sb"/>
                         <outlet property="loginSegmentedControl" destination="D8R-tJ-FAb" id="om2-VG-M2z"/>
+                        <outlet property="nameLabel" destination="OmW-Rq-ABB" id="9Tu-cy-Vz5"/>
                         <outlet property="passwordTextField" destination="AIo-J5-MUa" id="d6u-jQ-SHh"/>
                         <outlet property="usernameTextField" destination="agt-sm-flt" id="v1A-kt-drU"/>
                     </connections>
@@ -160,33 +166,33 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="restaurantCell" id="1nG-ry-DFg" customClass="RestaurantTableViewCell" customModule="RestaurantPassport" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="71.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="72.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1nG-ry-DFg" id="deP-tn-m2f">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="71.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="72.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="csZ-cj-Z0h">
-                                            <rect key="frame" x="10" y="5" width="394" height="61.5"/>
+                                            <rect key="frame" x="10" y="5" width="394" height="62.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4N-QN-Aad">
-                                                    <rect key="frame" x="0.0" y="0.0" width="48.5" height="61.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="48.5" height="62.5"/>
                                                     <fontDescription key="fontDescription" name="SpecialElite-Regular" family="Special Elite" pointSize="20"/>
                                                     <color key="textColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="left" distribution="equalSpacing" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GI4-UL-MH2">
-                                                    <rect key="frame" x="137.5" y="0.0" width="110" height="61.5"/>
+                                                    <rect key="frame" x="137.5" y="0.0" width="110" height="62.5"/>
                                                     <subviews>
                                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sr9-HF-4j2">
-                                                            <rect key="frame" x="0.0" y="0.0" width="22" height="61.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="22" height="62.5"/>
                                                             <state key="normal" image="star" catalog="system"/>
                                                             <connections>
                                                                 <action selector="star1Selected:" destination="1nG-ry-DFg" eventType="touchUpInside" id="vhL-cL-6VW"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D4Z-Tf-FAS">
-                                                            <rect key="frame" x="22" y="0.0" width="22" height="61"/>
+                                                            <rect key="frame" x="22" y="0.0" width="22" height="62"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="star" catalog="system"/>
                                                             <connections>
@@ -194,7 +200,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vQF-aA-DiY">
-                                                            <rect key="frame" x="44" y="0.0" width="22" height="61"/>
+                                                            <rect key="frame" x="44" y="0.0" width="22" height="62"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="star" catalog="system"/>
                                                             <connections>
@@ -202,7 +208,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="PFE-Od-hMT">
-                                                            <rect key="frame" x="66" y="0.0" width="22" height="61"/>
+                                                            <rect key="frame" x="66" y="0.0" width="22" height="62"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="star" catalog="system"/>
                                                             <connections>
@@ -210,7 +216,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lXa-hA-I5B">
-                                                            <rect key="frame" x="88" y="0.0" width="22" height="61"/>
+                                                            <rect key="frame" x="88" y="0.0" width="22" height="62"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" image="star" catalog="system"/>
                                                             <connections>
@@ -220,7 +226,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgh-Dp-0cf">
-                                                    <rect key="frame" x="328" y="0.0" width="66" height="61.5"/>
+                                                    <rect key="frame" x="328" y="0.0" width="66" height="62.5"/>
                                                     <state key="normal" image="Vector" backgroundImage="pic1"/>
                                                     <connections>
                                                         <action selector="stampSelected:" destination="1nG-ry-DFg" eventType="touchUpInside" id="pWn-IB-NEm"/>

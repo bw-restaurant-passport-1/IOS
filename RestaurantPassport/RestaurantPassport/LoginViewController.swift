@@ -72,6 +72,7 @@ class LoginViewController: UIViewController {
                                     self.fullNameTextField.isHidden = true
                                     self.emailTextField.isHidden = true
                                     self.cityTextField.isHidden = true
+                                    self.loginButton.setTitle("Sign Up", for: .normal)
                                 })
                             }
                         }
