@@ -25,8 +25,9 @@ class UserController {
     
     private let baseURL = URL(string: "https://restaurant-passport1.herokuapp.com/api/users")!
     var id: TokenResponse?
+    typealias  CompletionHandler = (Error?) -> Void
     
-    func signup(with user: User, completion: @escaping (Error?) -> Void) {
+    func signup(type: UserType, with signupData: SignUpRequest, completion: @escaping CompletionHandler) {
         let signupURL = baseURL.appendingPathComponent("register")
         
         var request = URLRequest(url: signupURL)
@@ -35,7 +36,7 @@ class UserController {
         
         let jsonEncoder = JSONEncoder()
         do {
-            let jsonData = try jsonEncoder.encode(user)
+            let jsonData = try jsonEncoder.encode(signupData)
             request.httpBody = jsonData
         } catch {
             print("Error encoding sign up object: \(error)")
@@ -43,7 +44,7 @@ class UserController {
             return
         }
         
-        URLSession.shared.dataTask(with: request) { (_, response, error) in
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
                 completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
@@ -55,11 +56,25 @@ class UserController {
                 return
             }
             
+            guard let data = data else {
+                completion(error)
+                return
+            }
+            
+            let decoder = JSONDecoder()
+            do {
+                self.id = try decoder.decode(TokenResponse.self, from: data)
+            } catch {
+                print("Error decoding token object: \(error)")
+                completion(error)
+                return
+            }
+            
             completion(nil)
         }.resume()
     }
     
-    func login(with user: User, completion: @escaping (Error?) -> Void) {
+    func login(with user: User, completion: @escaping CompletionHandler) {
         let loginURL = baseURL.appendingPathComponent("login")
         
         var request = URLRequest(url: loginURL)
