@@ -16,6 +16,11 @@ enum NetworkError: Error {
     case noDecode
 }
 
+enum UserType: String {
+    case newUser
+    case existingUser
+}
+
 class UserController {
     
     private let baseURL = URL(string: "https://restaurant-passport1.herokuapp.com/api/users")!
