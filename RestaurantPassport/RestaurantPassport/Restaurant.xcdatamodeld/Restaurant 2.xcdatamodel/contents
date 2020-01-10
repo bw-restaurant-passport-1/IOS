@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Restaurant" representedClassName="Restaurant" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String" defaultValueString="&quot;City&quot;"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" defaultValueString="&quot;(123) 456-7890&quot;"/>
+        <attribute name="restaurantName" attributeType="String" defaultValueString="&quot; New Restaurant&quot;"/>
+        <attribute name="restaurantPictureURL" optional="YES" attributeType="String"/>
+        <attribute name="streetAddress" optional="YES" attributeType="String" defaultValueString="&quot;123 Main St.&quot;"/>
+        <attribute name="websiteURL" optional="YES" attributeType="String" defaultValueString="&quot;www.myrestaurant.com&quot;"/>
+        <attribute name="zipcode" optional="YES" attributeType="String" defaultValueString="&quot;12345-1234&quot;"/>
+    </entity>
+    <entity name="Review" representedClassName="Review" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="String"/>
+        <attribute name="myRating" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="restaurant_id" attributeType="String"/>
+        <attribute name="stamped" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="user_id" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Restaurant" positionX="-238.86328125" positionY="69.0859375" width="128" height="163"/>
+        <element name="Review" positionX="-63" positionY="54" width="128" height="133"/>
+    </elements>
+</model>
