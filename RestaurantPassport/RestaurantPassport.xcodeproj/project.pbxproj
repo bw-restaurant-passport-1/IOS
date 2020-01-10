@@ -30,6 +30,7 @@
 		BAEE907D23C586760090EE8C /* Lato regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAEE907C23C586760090EE8C /* Lato regular.ttf */; };
 		BAEE907F23C5868F0090EE8C /* Girassol-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAEE907E23C5868F0090EE8C /* Girassol-Regular.ttf */; };
 		BAEE908123C5869F0090EE8C /* Special Elite regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAEE908023C5869F0090EE8C /* Special Elite regular.ttf */; };
+		F312A0C123C8FE22002C0A91 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312A0C023C8FE22002C0A91 /* SignUpRequest.swift */; };
 		F3C0A65123ADF8EB006521C2 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0A65023ADF8EB006521C2 /* Token.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		BAEE907C23C586760090EE8C /* Lato regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Lato regular.ttf"; path = "Assets.xcassets/Lato regular.dataset/Lato regular.ttf"; sourceTree = "<group>"; };
 		BAEE907E23C5868F0090EE8C /* Girassol-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Girassol-Regular.ttf"; path = "Assets.xcassets/Girassol-Regular.dataset/Girassol-Regular.ttf"; sourceTree = "<group>"; };
 		BAEE908023C5869F0090EE8C /* Special Elite regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Special Elite regular.ttf"; path = "Assets.xcassets/Special Elite regular.dataset/Special Elite regular.ttf"; sourceTree = "<group>"; };
+		F312A0C023C8FE22002C0A91 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
 		F3C0A65023ADF8EB006521C2 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				BAEE907323C439070090EE8C /* Review+Convenience.swift */,
 				BAA3A22323A9E66E00C06F52 /* User.swift */,
 				F3C0A65023ADF8EB006521C2 /* Token.swift */,
+				F312A0C023C8FE22002C0A91 /* SignUpRequest.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				BAA3A1F923A9E37700C06F52 /* AppDelegate.swift in Sources */,
 				BAA3A22223A9E65C00C06F52 /* Restaurant.xcdatamodeld in Sources */,
 				BAA3A1FB23A9E37700C06F52 /* SceneDelegate.swift in Sources */,
+				F312A0C123C8FE22002C0A91 /* SignUpRequest.swift in Sources */,
 				BAA3A21D23A9E62D00C06F52 /* RestaurantRepresentation.swift in Sources */,
 				BAEE907623C4394E0090EE8C /* ReviewController.swift in Sources */,
 				BAEE907823C439C60090EE8C /* ReviewRepresentation.swift in Sources */,

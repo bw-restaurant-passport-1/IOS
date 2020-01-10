@@ -8,11 +8,16 @@
 
 import Foundation
 
-struct User: Codable {
+struct User: Equatable, Codable {
+    var id: Int
     let username: String
     let password: String
     let name: String
     var email: String
     var city: String
     
+}
+
+struct ExistingUser: Equatable, Codable {
+    var user: User
 }

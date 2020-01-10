@@ -14,7 +14,7 @@ class RestaurantTableViewController: UITableViewController {
     var restaurant: [Restaurant] = []
     
     var restaurantController = RestaurantController()
-    
+    var userController = UserController()
     
     lazy var fetchResultsController: NSFetchedResultsController<Restaurant> = {
         // First we need a fetch request
@@ -44,6 +44,13 @@ class RestaurantTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if userController.id == nil {
+            performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
+        }
+    }
     
     // MARK: - Tableview data source
     
@@ -112,7 +119,10 @@ class RestaurantTableViewController: UITableViewController {
             let detailVC = segue.destination as! RestaurantDetailViewController
             detailVC.restaurantController = restaurantController
             detailVC.restaurant = fetchResultsController.object(at: indexPath)
-            
+        } else if segue.identifier == "LoginViewModalSegue" {
+            if let loginVC = segue.destination as? LoginViewController {
+                loginVC.userController = userController
+            }
             
         }
     }
