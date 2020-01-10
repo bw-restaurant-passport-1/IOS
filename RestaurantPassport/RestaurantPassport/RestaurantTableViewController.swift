@@ -60,12 +60,11 @@ class RestaurantTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantTableViewCell
-        
-        let restaurant = fetchResultsController.object(at: indexPath)
-        cell.restaurant = restaurantController
-        return cell
+
+        cell.restaurant = fetchResultsController.object(at: indexPath)
+         return cell
     }
-    
+
     
     
     
@@ -112,7 +111,7 @@ class RestaurantTableViewController: UITableViewController {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let detailVC = segue.destination as! RestaurantDetailViewController
             detailVC.restaurantController = restaurantController
-            detailVC.restaurant = restaurantController.searchedRestaurants[indexPath.row]
+            detailVC.restaurant = fetchResultsController.object(at: indexPath)
             
             
         }

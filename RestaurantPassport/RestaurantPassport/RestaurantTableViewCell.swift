@@ -22,7 +22,7 @@ class RestaurantTableViewCell: UITableViewCell {
     
     private func updateViews() {
         
-        
+    
         
         
         
