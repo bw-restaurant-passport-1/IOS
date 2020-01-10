@@ -74,21 +74,19 @@ class UserController {
         }.resume()
     }
     
-    func login(with user: User, completion: @escaping CompletionHandler) {
+    func login(type: UserType, withUsername username: String, withPassword password: String, completion: @escaping CompletionHandler = { _ in}) {
         let loginURL = baseURL.appendingPathComponent("login")
         
         var request = URLRequest(url: loginURL)
         request.httpMethod = HTTPMethod.post.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let jsonEncoder = JSONEncoder()
         do {
-            let jsonData = try jsonEncoder.encode(user)
-            request.httpBody = jsonData
+            let userParams = ["username": username, "password": password] as [String: Any]
+            let json = try JSONSerialization.data(withJSONObject: userParams, options: .prettyPrinted)
+            request.httpBody = json
         } catch {
             print("Error encoding user object: \(error)")
-            completion(error)
-            return
         }
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
