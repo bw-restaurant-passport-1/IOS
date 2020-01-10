@@ -9,6 +9,26 @@
 import UIKit
 
 class RestaurantTableViewCell: UITableViewCell {
+    
+    var restaurant: Restaurant? {
+        didSet {
+            updateViews()
+                
+            
+                
+            }
+        
+    }
+    
+    private func updateViews() {
+        
+    
+        
+        
+        
+    }
+    
+    
     // MARK: - Outlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var star1Button: UIButton!
@@ -31,8 +51,7 @@ class RestaurantTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+      // Configure the view for the selected state
     }
     
     // Actions
@@ -47,5 +66,7 @@ class RestaurantTableViewCell: UITableViewCell {
     @IBAction func star5Selected(_ sender: UIButton) {
     }
     @IBAction func stampSelected(_ sender: UIButton) {
+    
     }
 }
+

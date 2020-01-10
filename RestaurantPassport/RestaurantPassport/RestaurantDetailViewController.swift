@@ -9,6 +9,13 @@
 import UIKit
 
 class RestaurantDetailViewController: UIViewController {
+    
+    var restaurant: Restaurant?
+    
+    var restaurantController = RestaurantController()
+    
+    
+    
     // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var star1Button: UIButton!
@@ -29,7 +36,7 @@ class RestaurantDetailViewController: UIViewController {
     // View
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -45,16 +52,12 @@ class RestaurantDetailViewController: UIViewController {
     @IBAction func star5Selected(_ sender: UIButton) {
     }
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
+        
+        
+        
+        
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }
