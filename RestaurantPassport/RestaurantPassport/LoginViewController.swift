@@ -75,6 +75,7 @@ class LoginViewController: UIViewController {
                                     self.nameLabel.isHidden = true
                                     self.cityLabel.isHidden = true
                                     self.emailLabel.isHidden = true
+                                    self.loginButton.setTitle("Log In", for: .normal)
                                 })
                             }
                         }
