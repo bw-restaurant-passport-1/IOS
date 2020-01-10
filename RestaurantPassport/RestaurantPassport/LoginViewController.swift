@@ -66,13 +66,15 @@ class LoginViewController: UIViewController {
                                 let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                                 alertController.addAction(alertAction)
                                 self.present(alertController, animated: true, completion:  {
-                                    self.loginSegmentedControl.selectedSegmentIndex = 0
+                                    self.loginSegmentedControl.selectedSegmentIndex = 1
                                     self.loginType = .login
                                     self.passwordTextField.text = nil
                                     self.fullNameTextField.isHidden = true
                                     self.emailTextField.isHidden = true
                                     self.cityTextField.isHidden = true
-                                    self.loginButton.setTitle("Sign Up", for: .normal)
+                                    self.nameLabel.isHidden = true
+                                    self.cityLabel.isHidden = true
+                                    self.emailLabel.isHidden = true
                                 })
                             }
                         }
@@ -84,6 +86,9 @@ class LoginViewController: UIViewController {
                         print("Error occured during log in: \(error)")
                     } else {
                         DispatchQueue.main.async {
+                            let alertController = UIAlertController(title: "Log In successful!", message: "Welcome Back!", preferredStyle: .alert)
+                            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                            alertController.addAction(alertAction)
                             self.dismiss(animated: true, completion: nil)
                         }
                     }
@@ -97,17 +102,6 @@ class LoginViewController: UIViewController {
     //Need to connect to storyboard:
     @IBAction func loginTypeChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            loginType = .login
-            usernameTextField.text = nil
-            passwordTextField.text = nil
-            fullNameTextField.isHidden = true
-            emailTextField.isHidden = true
-            cityTextField.isHidden = true
-            nameLabel.isHidden = true
-            cityLabel.isHidden = true
-            emailLabel.isHidden = true
-            self.loginButton.setTitle("Log In", for: .normal)
-        } else if sender.selectedSegmentIndex == 1 {
             loginType = .signUp
             usernameTextField.text = nil
             passwordTextField.text = nil
@@ -121,6 +115,17 @@ class LoginViewController: UIViewController {
             cityLabel.isHidden = false
             emailLabel.isHidden = false
             self.loginButton.setTitle("Sign Up", for: .normal)
+        } else if sender.selectedSegmentIndex == 1 {
+            loginType = .login
+            usernameTextField.text = nil
+            passwordTextField.text = nil
+            fullNameTextField.isHidden = true
+            emailTextField.isHidden = true
+            cityTextField.isHidden = true
+            nameLabel.isHidden = true
+            cityLabel.isHidden = true
+            emailLabel.isHidden = true
+            self.loginButton.setTitle("Log In", for: .normal)
         }
     }
 
