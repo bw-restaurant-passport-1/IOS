@@ -24,7 +24,7 @@ enum UserType: String {
 class UserController {
     
     private let baseURL = URL(string: "https://restaurant-passport1.herokuapp.com/api/users")!
-    var token: TokenResponse?
+    var id: TokenResponse?
     
     func signup(with user: User, completion: @escaping (Error?) -> Void) {
         let signupURL = baseURL.appendingPathComponent("register")
@@ -95,7 +95,7 @@ class UserController {
             
             let decoder = JSONDecoder()
             do {
-                self.token = try decoder.decode(TokenResponse.self, from: data)
+                self.id = try decoder.decode(TokenResponse.self, from: data)
             } catch {
                 print("Error decoding token object: \(error)")
                 completion(error)
