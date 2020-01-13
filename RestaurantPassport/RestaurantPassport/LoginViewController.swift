@@ -36,6 +36,11 @@ class LoginViewController: UIViewController {
     // View
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.delegate = self
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
     
     // Actions
@@ -140,4 +145,24 @@ class LoginViewController: UIViewController {
     }
     */
 
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if let text = textField.text, !text.isEmpty {
+            switch textField {
+            case usernameTextField:
+                passwordTextField.becomeFirstResponder()
+            case passwordTextField:
+                fullNameTextField.becomeFirstResponder()
+            case fullNameTextField:
+                cityTextField.becomeFirstResponder()
+            case cityTextField:
+                emailTextField.becomeFirstResponder()
+            default:
+                textField.resignFirstResponder()
+            }
+        }
+        return false
+    }
 }
