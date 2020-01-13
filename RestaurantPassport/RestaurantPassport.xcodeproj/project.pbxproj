@@ -31,8 +31,27 @@
 		BAEE907F23C5868F0090EE8C /* Girassol-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAEE907E23C5868F0090EE8C /* Girassol-Regular.ttf */; };
 		BAEE908123C5869F0090EE8C /* Special Elite regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAEE908023C5869F0090EE8C /* Special Elite regular.ttf */; };
 		F312A0C123C8FE22002C0A91 /* SignUpRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F312A0C023C8FE22002C0A91 /* SignUpRequest.swift */; };
+		F348D90823CCE1F0003D68CC /* RestaurantPassportUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F348D90723CCE1F0003D68CC /* RestaurantPassportUITests.swift */; };
+		F348D91623CCE202003D68CC /* RestaurantPassportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F348D91523CCE202003D68CC /* RestaurantPassportTests.swift */; };
 		F3C0A65123ADF8EB006521C2 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C0A65023ADF8EB006521C2 /* Token.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F348D90A23CCE1F0003D68CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAA3A1ED23A9E37700C06F52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAA3A1F423A9E37700C06F52;
+			remoteInfo = RestaurantPassport;
+		};
+		F348D91823CCE202003D68CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BAA3A1ED23A9E37700C06F52 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BAA3A1F423A9E37700C06F52;
+			remoteInfo = RestaurantPassport;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BAA3A1F523A9E37700C06F52 /* RestaurantPassport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RestaurantPassport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,11 +81,31 @@
 		BAEE907E23C5868F0090EE8C /* Girassol-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Girassol-Regular.ttf"; path = "Assets.xcassets/Girassol-Regular.dataset/Girassol-Regular.ttf"; sourceTree = "<group>"; };
 		BAEE908023C5869F0090EE8C /* Special Elite regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Special Elite regular.ttf"; path = "Assets.xcassets/Special Elite regular.dataset/Special Elite regular.ttf"; sourceTree = "<group>"; };
 		F312A0C023C8FE22002C0A91 /* SignUpRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequest.swift; sourceTree = "<group>"; };
+		F348D90523CCE1F0003D68CC /* RestaurantPassportUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestaurantPassportUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F348D90723CCE1F0003D68CC /* RestaurantPassportUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantPassportUITests.swift; sourceTree = "<group>"; };
+		F348D90923CCE1F0003D68CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F348D91323CCE202003D68CC /* RestaurantPassportTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestaurantPassportTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F348D91523CCE202003D68CC /* RestaurantPassportTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantPassportTests.swift; sourceTree = "<group>"; };
+		F348D91723CCE202003D68CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3C0A65023ADF8EB006521C2 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BAA3A1F223A9E37700C06F52 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F348D90223CCE1F0003D68CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F348D91023CCE202003D68CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				BAA3A1F723A9E37700C06F52 /* RestaurantPassport */,
+				F348D90623CCE1F0003D68CC /* RestaurantPassportUITests */,
+				F348D91423CCE202003D68CC /* RestaurantPassportTests */,
 				BAA3A1F623A9E37700C06F52 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				BAA3A1F523A9E37700C06F52 /* RestaurantPassport.app */,
+				F348D90523CCE1F0003D68CC /* RestaurantPassportUITests.xctest */,
+				F348D91323CCE202003D68CC /* RestaurantPassportTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +232,24 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		F348D90623CCE1F0003D68CC /* RestaurantPassportUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F348D90723CCE1F0003D68CC /* RestaurantPassportUITests.swift */,
+				F348D90923CCE1F0003D68CC /* Info.plist */,
+			);
+			path = RestaurantPassportUITests;
+			sourceTree = "<group>";
+		};
+		F348D91423CCE202003D68CC /* RestaurantPassportTests */ = {
+			isa = PBXGroup;
+			children = (
+				F348D91523CCE202003D68CC /* RestaurantPassportTests.swift */,
+				F348D91723CCE202003D68CC /* Info.plist */,
+			);
+			path = RestaurantPassportTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -209,6 +270,42 @@
 			productReference = BAA3A1F523A9E37700C06F52 /* RestaurantPassport.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F348D90423CCE1F0003D68CC /* RestaurantPassportUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F348D90C23CCE1F0003D68CC /* Build configuration list for PBXNativeTarget "RestaurantPassportUITests" */;
+			buildPhases = (
+				F348D90123CCE1F0003D68CC /* Sources */,
+				F348D90223CCE1F0003D68CC /* Frameworks */,
+				F348D90323CCE1F0003D68CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F348D90B23CCE1F0003D68CC /* PBXTargetDependency */,
+			);
+			name = RestaurantPassportUITests;
+			productName = RestaurantPassportUITests;
+			productReference = F348D90523CCE1F0003D68CC /* RestaurantPassportUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		F348D91223CCE202003D68CC /* RestaurantPassportTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F348D91A23CCE202003D68CC /* Build configuration list for PBXNativeTarget "RestaurantPassportTests" */;
+			buildPhases = (
+				F348D90F23CCE202003D68CC /* Sources */,
+				F348D91023CCE202003D68CC /* Frameworks */,
+				F348D91123CCE202003D68CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F348D91923CCE202003D68CC /* PBXTargetDependency */,
+			);
+			name = RestaurantPassportTests;
+			productName = RestaurantPassportTests;
+			productReference = F348D91323CCE202003D68CC /* RestaurantPassportTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -221,6 +318,14 @@
 				TargetAttributes = {
 					BAA3A1F423A9E37700C06F52 = {
 						CreatedOnToolsVersion = 11.2.1;
+					};
+					F348D90423CCE1F0003D68CC = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = BAA3A1F423A9E37700C06F52;
+					};
+					F348D91223CCE202003D68CC = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = BAA3A1F423A9E37700C06F52;
 					};
 				};
 			};
@@ -238,6 +343,8 @@
 			projectRoot = "";
 			targets = (
 				BAA3A1F423A9E37700C06F52 /* RestaurantPassport */,
+				F348D90423CCE1F0003D68CC /* RestaurantPassportUITests */,
+				F348D91223CCE202003D68CC /* RestaurantPassportTests */,
 			);
 		};
 /* End PBXProject section */
@@ -254,6 +361,20 @@
 				BAEE908123C5869F0090EE8C /* Special Elite regular.ttf in Resources */,
 				BAA3A20023A9E37700C06F52 /* Main.storyboard in Resources */,
 				BAEE907F23C5868F0090EE8C /* Girassol-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F348D90323CCE1F0003D68CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F348D91123CCE202003D68CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,7 +406,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F348D90123CCE1F0003D68CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F348D90823CCE1F0003D68CC /* RestaurantPassportUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F348D90F23CCE202003D68CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F348D91623CCE202003D68CC /* RestaurantPassportTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F348D90B23CCE1F0003D68CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAA3A1F423A9E37700C06F52 /* RestaurantPassport */;
+			targetProxy = F348D90A23CCE1F0003D68CC /* PBXContainerItemProxy */;
+		};
+		F348D91923CCE202003D68CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BAA3A1F423A9E37700C06F52 /* RestaurantPassport */;
+			targetProxy = F348D91823CCE202003D68CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BAA3A1FE23A9E37700C06F52 /* Main.storyboard */ = {
@@ -457,6 +607,80 @@
 			};
 			name = Release;
 		};
+		F348D90D23CCE1F0003D68CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RestaurantPassportUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabiolasaga.RestaurantPassportUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RestaurantPassport;
+			};
+			name = Debug;
+		};
+		F348D90E23CCE1F0003D68CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RestaurantPassportUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabiolasaga.RestaurantPassportUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RestaurantPassport;
+			};
+			name = Release;
+		};
+		F348D91B23CCE202003D68CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RestaurantPassportTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabiolasaga.RestaurantPassportTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RestaurantPassport.app/RestaurantPassport";
+			};
+			name = Debug;
+		};
+		F348D91C23CCE202003D68CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RestaurantPassportTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabiolasaga.RestaurantPassportTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RestaurantPassport.app/RestaurantPassport";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -474,6 +698,24 @@
 			buildConfigurations = (
 				BAA3A20A23A9E37900C06F52 /* Debug */,
 				BAA3A20B23A9E37900C06F52 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F348D90C23CCE1F0003D68CC /* Build configuration list for PBXNativeTarget "RestaurantPassportUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F348D90D23CCE1F0003D68CC /* Debug */,
+				F348D90E23CCE1F0003D68CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F348D91A23CCE202003D68CC /* Build configuration list for PBXNativeTarget "RestaurantPassportTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F348D91B23CCE202003D68CC /* Debug */,
+				F348D91C23CCE202003D68CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
