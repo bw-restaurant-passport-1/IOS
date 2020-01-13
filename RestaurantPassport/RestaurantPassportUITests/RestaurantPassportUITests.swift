@@ -55,14 +55,18 @@ class RestaurantPassportUITests: XCTestCase {
     
     func testLabelsExist() {
         XCTAssertTrue(app.staticTexts["Username"].exists)
-        XCTAssertTrue(app.staticTexts["Secure Password"].exists)
-        XCTAssertTrue(app.staticTexts["Firstname Lastname"].exists)
-        XCTAssertTrue(app.staticTexts["Home City"].exists)
-        XCTAssertTrue(app.staticTexts["YourName@YourEmail.com"].exists)
+        XCTAssertTrue(app.staticTexts["Password"].exists)
+        XCTAssertTrue(app.staticTexts["Name"].exists)
+        XCTAssertTrue(app.staticTexts["City"].exists)
+        XCTAssertTrue(app.staticTexts["Email Address"].exists)
     }
     
     func testTextfieldsExist() {
-        XCTAssertTrue(app.textFields["Username"].exists)
+        XCTAssertTrue(username.exists)
+        XCTAssertTrue(password.exists)
+        XCTAssertTrue(fullName.exists)
+        XCTAssertTrue(city.exists)
+        XCTAssertTrue(email.exists)
     }
     
     func testSignUpButton() {
@@ -96,19 +100,37 @@ class RestaurantPassportUITests: XCTestCase {
     }
     
     func testLoginLabels() {
-        
+        app.segmentedControls.buttons.element(boundBy: 1).tap()
+        XCTAssertTrue(app.staticTexts["Username"].exists)
+        XCTAssertTrue(app.staticTexts["Password"].exists)
+        XCTAssertFalse(app.staticTexts["Name"].exists)
+        XCTAssertFalse(app.staticTexts["City"].exists)
+        XCTAssertFalse(app.staticTexts["Email Address"].exists)
     }
     
     func testLoginTextFields() {
-        
+        app.segmentedControls.buttons.element(boundBy: 1).tap()
+        XCTAssertTrue(username.exists)
+        XCTAssertTrue(password.exists)
+        XCTAssertFalse(fullName.exists)
+        XCTAssertFalse(city.exists)
+        XCTAssertFalse(email.exists)
     }
     
     func testLoginButton() {
-        
+        XCTAssertTrue(app.buttons["Log In"].exists)
     }
     
     func testLogin() {
+        username.tap()
+        username.typeText("UITesting")
         
+        password.doubleTap()
+        password.typeText("testing")
+        
+        app.keyboards.buttons["Return"].tap()
+        
+        app.staticTexts["Sign Up"].tap()
     }
 }
 
