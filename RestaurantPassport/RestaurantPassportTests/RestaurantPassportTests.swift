@@ -12,6 +12,9 @@ import XCTest
 class RestaurantPassportTests: XCTestCase {
     let loginViewController = LoginViewController()
     let userController = UserController()
+    let restaurantController = RestaurantController()
+    let reviewController = ReviewController()
+    
     let signupRequest = SignUpRequest(username: "Unit Test", password: "testing", name: "Unit Test", email: "unittesting@unittest.com", city: "Chicago")
     let user = User(id: 23, username: "FabiolaTest", password: "testing", name: "Fabiola", email: "saga.fabiola@gmail.com", city: "chicago")
     
