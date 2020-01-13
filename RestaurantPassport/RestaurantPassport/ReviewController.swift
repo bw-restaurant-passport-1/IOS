@@ -18,7 +18,7 @@ class ReviewController {
     var reviewedRestaurants: [ReviewRepresentation] = []
     
     // MARK: - Methods
-   
+    
     
     func put(review: Review, completion: @escaping () -> Void = { }) {
         
@@ -125,9 +125,9 @@ class ReviewController {
         // TOFIX: - User ID
         let user_id = ""
         let review = Review(id: id, user_id: user_id, restaurant_id: restaurant_id,
-                                    myRating: myrating,
-                                    notes: notes,
-                                    stamped: stamped)
+                            myRating: myrating,
+                            notes: notes,
+                            stamped: stamped)
         
         let context = CoreDataStack.shared.backgroundContext
         

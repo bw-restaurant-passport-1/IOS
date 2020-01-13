@@ -11,11 +11,8 @@ import UIKit
 class RestaurantDetailViewController: UIViewController {
     
     var restaurant: Restaurant?
-    
     var restaurantController = RestaurantController()
-    
-    
-    
+ 
     // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var star1Button: UIButton!
@@ -28,9 +25,6 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var notesTextView: UITextView!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
-    // MARK: - Properties
-    
     
     // MARK: - Methods
     // View
@@ -52,12 +46,6 @@ class RestaurantDetailViewController: UIViewController {
     @IBAction func star5Selected(_ sender: UIButton) {
     }
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
-        
-        
-        
-        
+            
     }
-    
-    
-    
 }

@@ -29,15 +29,9 @@ class RestaurantTableViewController: UITableViewController {
         return frc
     }()
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -63,26 +57,19 @@ class RestaurantTableViewController: UITableViewController {
         
         return 1
     }
-    
-    
+        
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantTableViewCell
-
+        
         cell.restaurant = fetchResultsController.object(at: indexPath)
-         return cell
+        return cell
     }
-
-    
-    
-    
-    
+     
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    
-    
     
     //    // Override to support editing the table view.
     //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -126,13 +113,7 @@ class RestaurantTableViewController: UITableViewController {
             
         }
     }
-    
-    
-    
-    
-    
 }
-
 
 extension RestaurantTableViewController: NSFetchedResultsControllerDelegate {
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

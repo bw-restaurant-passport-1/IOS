@@ -13,19 +13,12 @@ class RestaurantTableViewCell: UITableViewCell {
     var restaurant: Restaurant? {
         didSet {
             updateViews()
-                
-            
-                
+   
             }
-        
     }
     
     private func updateViews() {
-        
-    
-        
-        
-        
+   
     }
     
     

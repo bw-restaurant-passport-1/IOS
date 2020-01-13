@@ -28,7 +28,7 @@ class RestaurantPassportTests: XCTestCase {
                 }
             }
         })
-}
+    }
     
     func testLogIn() {
         userController.login(type: .existingUser, withUsername: "FabiolaTest", withPassword: "testing") { error in
@@ -41,5 +41,4 @@ class RestaurantPassportTests: XCTestCase {
             }
         }
     }
-
 }
