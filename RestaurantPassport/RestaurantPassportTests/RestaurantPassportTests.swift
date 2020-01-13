@@ -7,26 +7,35 @@
 //
 
 import XCTest
+@testable import RestaurantPassport
 
 class RestaurantPassportTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+    let loginViewController = LoginViewController()
+    let userController = UserController()
+    let signupRequest = SignUpRequest(username: "Unit Test", password: "testing", name: "Unit Test", email: "unittesting@unittest.com", city: "Chicago")
+    let user = User(id: 23, username: "FabiolaTest", password: "testing", name: "Fabiola", email: "saga.fabiola@gmail.com", city: "chicago")
+    
+    func testCreateUser() {
+        userController.signup(type: .newUser, with: signupRequest, completion: { error in
+            if let error = error {
+                print("Error occured during sign up: \(error)")
+            } else {
+                DispatchQueue.main.async {
+                    print("Sign Up Succesful")
+                }
+            }
+        })
+}
+    
+    func testLogIn() {
+        userController.login(type: .existingUser, withUsername: "FabiolaTest", withPassword: "testing") { error in
+            if let error = error {
+                print("Error occured during log in: \(error)")
+            } else {
+                DispatchQueue.main.async {
+                    print("Log in Successful")
+                }
+            }
         }
     }
 
