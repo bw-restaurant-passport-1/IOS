@@ -15,7 +15,7 @@ class ReviewController {
     private let base = URL(string: "https://restaurant-passport1.herokuapp.com/api/passports")!
     
     // Restaurant Array
-    var reviewedRestaurants: [ReviewRepresentation] = []
+    var reviewList: [ReviewRepresentation] = []
     
     // MARK: - Methods
    
@@ -65,21 +65,21 @@ class ReviewController {
         
         let identifiersToFetch = representations.compactMap({ $0.id})
         let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
-        let context = CoreDataStack.shared.backgroundContext
+         let context = CoreDataStack.shared.backgroundContext
         
         var reviewsToCreate = representationsByID
-        context.performAndWait {
+         context.performAndWait {
             
             do {
                 let fetchRequest: NSFetchRequest<Review> = Review.fetchRequest()
                 fetchRequest.predicate = NSPredicate(format: "identifier IN %@", identifiersToFetch)
-                
-                let existingReviews = try context.fetch(fetchRequest)
-                
+
+                 let existingReviews = try context.fetch(fetchRequest)
+
                 for review in existingReviews {
                     guard let identifier = review.id,
                         let representation = representationsByID[identifier] else { continue }
-                    
+
                     review.id = representation.id
                     review.user_id = representation.user_id
                     review.restaurant_id = representation.restaurant_id
@@ -88,13 +88,13 @@ class ReviewController {
                     review.myRating = representation.myRating
                     reviewsToCreate.removeValue(forKey: identifier)
                 }
-                
+
                 for representation in reviewsToCreate.values {
                     Review(representation, context: context)
                 }
-                
+
                 CoreDataStack.shared.save(context: context)
-                
+
             } catch {
                 NSLog("Error fetching reviews from persistent store: \(error)")
             }
@@ -118,7 +118,7 @@ class ReviewController {
                 completion(error)
             }
         }.resume()
-    }
+   }
     
     func createReview(restaurant_id: String, myrating: String?, notes: String?, stamped: Bool?) {
         
@@ -130,27 +130,27 @@ class ReviewController {
                                     notes: notes,
                                     stamped: stamped)
         
-        let context = CoreDataStack.shared.backgroundContext
+         let context = CoreDataStack.shared.backgroundContext
         
-        CoreDataStack.shared.save(context: context)
+         CoreDataStack.shared.save(context: context)
         
         put(review: review!)
-        
+//        reviewList.append(review!)
     }
     
     func visitRestaurant(review: Review, restaurant: Restaurant, stamped: Bool) {
         
-        review.restaurant_id = restaurant.id?.uuidString
+        review.restaurant_id = restaurant.id
         review.stamped = stamped
-        CoreDataStack.shared.save()
+         CoreDataStack.shared.save()
         put(review: review)
     }
     
     func rateRestaurant(review: Review, restaurant: Restaurant, myRating: String) {
         
-        review.restaurant_id = restaurant.id?.uuidString
+        review.restaurant_id = restaurant.id
         review.myRating = myRating
-        CoreDataStack.shared.save()
+         CoreDataStack.shared.save()
         put(review: review)
     }
     

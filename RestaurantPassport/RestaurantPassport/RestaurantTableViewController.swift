@@ -7,84 +7,81 @@
 //
 
 import UIKit
+import CoreData
 
 class RestaurantTableViewController: UITableViewController {
-
+    var restaurantController = RestaurantController()
+    var reviewController = ReviewController()
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.reloadData()
+        print(restaurantController.restaurantList.count)
+//        let _ = Restaurant(id: UUID().uuidString, restaurantName: "Bobs", streetAddress: "123 Main St", city: "town", zipcode: "12345", phoneNumber: "123-4567", websiteURL: "www.website.com", restaurantPictureURL: "")
+//    
+//        let context = CoreDataStack.shared.mainContext
+//        CoreDataStack.shared.save(context: context)
+       
+//        let context = CoreDataStack.shared.backgroundContext
+//        let fetchRequest: NSFetchRequest<Restaurant> = Restaurant.fetchRequest()
+//        
+//        
+//        let existingRestaurants = try! context.fetch(fetchRequest)
+//        print(existingRestaurants.count)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+   // }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return restaurantController.restaurantList.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "restaurantCell", for: indexPath) as! RestaurantTableViewCell
+        let displayedRestaurant = restaurantController.restaurantList[indexPath.item]
+        let displayedReview = reviewController.reviewList[indexPath.item]
+        cell.restaurant = displayedRestaurant
+        cell.review = displayedReview
         return cell
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            restaurantController.restaurantList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "addSegue" {
+            if let addVC = segue.destination as? RestaurantDetailViewController {
+                addVC.restaurantController = restaurantController
+                addVC.reviewController = reviewController
+            }
+        } else if segue.identifier == "viewSegue" {
+            if let viewVC = segue.destination as? RestaurantDetailViewController {
+                viewVC.restaurantController = restaurantController
+                viewVC.reviewController = reviewController
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    viewVC.restaurant = restaurantController.restaurantList[indexPath.row]
+                    viewVC.review = reviewController.reviewList[indexPath.row]
+                }
+            }
+        }
     }
-    */
-
 }

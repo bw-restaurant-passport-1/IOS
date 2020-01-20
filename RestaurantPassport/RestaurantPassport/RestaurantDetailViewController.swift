@@ -27,10 +27,10 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     // MARK: - Properties
-    let restaurantController = RestaurantController()
-    let reviewController = ReviewController()
-    var restaurant: Restaurant?
-    var review: Review?
+    var restaurantController: RestaurantController?
+    var reviewController: ReviewController?
+    var restaurant: RestaurantRepresentation?
+    var review: ReviewRepresentation?
     
     
     // MARK: - Methods
@@ -106,12 +106,22 @@ class RestaurantDetailViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: UIBarButtonItem) {
         // TODO: Fix picture URL to find picture
         guard saveButton.title == "Save" else {
-            restaurantController.createRestaurant(with: nameTextField.text, streetAddress: addressTextField.text, city: cityTextField.text, zipcode: zipcodeTextField.text, phoneNumber: phoneTextField.text, websiteURL: websiteTextField.text, restaurantPictureURL: "")
+            let name = nameTextField.text
+            let streetAddress = addressTextField.text
+            let city = cityTextField.text
+            let zipcode = zipcodeTextField.text
+            let phoneNumber = phoneTextField.text
+            let websiteURL = websiteTextField.text
+            let pictureURL = ""
+            
+            restaurantController?.createRestaurant(with: name, streetAddress: streetAddress, city: city, zipcode: zipcode, phoneNumber: phoneNumber, websiteURL: websiteURL, restaurantPictureURL: pictureURL)
             // TODO: figure out how to create myRating correctly
-            reviewController.createReview(restaurant_id: restaurant?.id?.uuidString ?? "", myrating: "3", notes: notesTextView.text, stamped: true)
+           // reviewController?.createReview(restaurant_id: restaurant?.id ?? "", myrating: "3", notes: notesTextView.text, stamped: true)
+            navigationController?.popToRootViewController(animated: true)
             return
         }
         let updatedRestaurant = RestaurantRepresentation(id: restaurant!.id, streetAddress: addressTextField.text, city: cityTextField.text, zipcode: zipcodeTextField.text, phoneNumber: phoneTextField.text, websiteURL: websiteTextField.text, restaurantPictureURL: "")
-        restaurantController.updateRestaurant(with: [updatedRestaurant])
+        restaurantController?.updateRestaurant(with: [updatedRestaurant])
+        navigationController?.popToRootViewController(animated: true)
     }
 }

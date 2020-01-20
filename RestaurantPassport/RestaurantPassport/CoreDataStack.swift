@@ -12,34 +12,34 @@ import CoreData
 class CoreDataStack {
     // MARK: - Properties
     static let shared = CoreDataStack()
-    
+
     private init() {
-        
+
     }
-    
+
     lazy var container: NSPersistentContainer = {
-        
+
         let container = NSPersistentContainer(name: "Restaurant")
         container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error {
-                fatalError("Core sata was unable to load persistence stores: \(error)")
+                fatalError("Core data was unable to load persistence stores: \(error)")
             }
         })
-        
+
         return container
     }()
-    
+
     var mainContext: NSManagedObjectContext {
         return container.viewContext
     }
-    
+
     var backgroundContext: NSManagedObjectContext {
         return container.newBackgroundContext()
     }
     
-    // MARK: - Methods
+   //  MARK: - Methods
     func save(context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        
+
         context.performAndWait {
             do {
                 try context.save()
@@ -49,4 +49,4 @@ class CoreDataStack {
             }
         }
     }
-}
+ }

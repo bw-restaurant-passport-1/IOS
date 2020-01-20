@@ -20,13 +20,13 @@ extension Restaurant {
         let zipcode = self.zipcode ?? "12345-1234"
         let phoneNumber = self.phoneNumber ?? "(123) 456-7890"
         let websiteURL = self.websiteURL ?? "www.website.com"
-        let id = self.id ?? UUID()
+        let id = self.id ?? UUID().uuidString
         let restaurantPictureURL = self.restaurantPictureURL
         return RestaurantRepresentation(id: id, streetAddress: streetAddress, city: city, zipcode: zipcode, phoneNumber: phoneNumber, websiteURL: websiteURL, restaurantPictureURL: restaurantPictureURL)
     }
     
     // MARK: - Initializers
-    @discardableResult convenience init?(id: UUID, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    @discardableResult convenience init?(id: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
         self.init(context: context)
         
@@ -47,9 +47,9 @@ extension Restaurant {
         self.init(representation, context: context)
     }
     
-    @discardableResult convenience init?(id: UUID, restaurantName: String?, streetAddress: String?, city: String?, zipcode: String?, phoneNumber: String?, websiteURL: String?, restaurantPictureURL: String?) {
+    @discardableResult convenience init?(id: String, restaurantName: String?, streetAddress: String?, city: String?, zipcode: String?, phoneNumber: String?, websiteURL: String?, restaurantPictureURL: String?, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         
-        self.init()
+        self.init(context: context)
         self.id = id
         self.restaurantName = restaurantName
         self.streetAddress = streetAddress

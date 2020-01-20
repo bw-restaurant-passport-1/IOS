@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19B88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Restaurant" representedClassName="Restaurant" syncable="YES" codeGenerationType="class">
         <attribute name="city" optional="YES" attributeType="String" defaultValueString="&quot;City&quot;"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="phoneNumber" optional="YES" attributeType="String" defaultValueString="&quot;(123) 456-7890&quot;"/>
         <attribute name="restaurantName" attributeType="String" defaultValueString="&quot; New Restaurant&quot;"/>
         <attribute name="restaurantPictureURL" optional="YES" attributeType="String"/>

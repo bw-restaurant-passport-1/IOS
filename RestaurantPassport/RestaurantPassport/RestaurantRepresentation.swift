@@ -9,7 +9,7 @@
 import Foundation
 
 struct RestaurantRepresentation: Equatable, Codable {
-    let id: UUID?
+    let id: String?
     let restaurantName: String? = "New Restaurant"
     let streetAddress: String?
     let city: String?
